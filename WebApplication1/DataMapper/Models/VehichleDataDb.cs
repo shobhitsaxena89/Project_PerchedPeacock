@@ -16,6 +16,5 @@ namespace DataMapper.Models
         public string CustomerFullName { get; set; }
         public string ContactNumber { get; set; }      
         public string entryDateTime { get; set; }
-
     }
 }

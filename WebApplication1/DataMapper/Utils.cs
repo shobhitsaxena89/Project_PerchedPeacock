@@ -19,6 +19,7 @@ namespace DataMapper
         public const string LogPath = "LogPath";
         public const string ParkingType2W = "2W";
         public const string ParkingType4W = "4W";
-
+        public const string ParkingSpaces = "ParkingSpaces";
+        public const string ParkingLotId = "parkingLotId";
     }
 }

@@ -26,7 +26,19 @@ namespace BusinessLogic
         {
             InitComponents();
         }
+        Dictionary<string, Queue<int>> _availableParkingSpacesFloorWise;
 
+        public Dictionary<string, Queue<int>> AvailableParkingSpacesFloorWise
+        {
+            get
+            {
+                return _availableParkingSpacesFloorWise;
+            }
+            set
+            {
+                _availableParkingSpacesFloorWise = value;
+            }
+        }
         private void InitComponents()
         {
             _loggerFactory = new LoggerFactoryImpl();
@@ -38,6 +50,20 @@ namespace BusinessLogic
             string dbTypeStr = ConfigurationManager.AppSettings[Utils.Storage];            
             Enum.TryParse<DbType>(dbTypeStr, out _dbType);
             _crudOperator = _factory.GetDb(_dbType);
+
+            string configuredParkingSpaces = ConfigurationManager.AppSettings[Utils.ParkingSpaces];
+            string[] spaces = configuredParkingSpaces.Split('|');
+            _availableParkingSpacesFloorWise = spaces.
+            Select((s) =>
+            {
+                Queue<int> q = new Queue<int>();
+                for (int i = 1; i <= Int32.Parse(s.Split('-')[1]); i++)
+                {
+                    q.Enqueue(i);
+                }
+
+                return new KeyValuePair<string, Queue<int>>(s.Split('-')[0], q);
+            }).ToDictionary(x => x.Key, y => y.Value);
         }      
 
         public static IParkingSystem ParkingSystemInstance
@@ -53,7 +79,21 @@ namespace BusinessLogic
         public BookingSavedStatus SaveNewParkingData(VehichleData vehichleData)
         {
             VehichleDataDb data =  _dataMapperToDb.Translate(vehichleData);
+            data.ParkingLotId = GetParkingLotId();
             return _crudOperator.Save(data);
+        }
+        private string GetParkingLotId()
+        {
+            string parkingLotId = string.Empty;
+            foreach (var item in AvailableParkingSpacesFloorWise)
+            {
+                if (item.Value.Count > 0)
+                {
+                    parkingLotId = item.Key + "-" + item.Value.Dequeue().ToString();
+                    break;
+                }
+            }
+            return parkingLotId;
         }
 
         public LiveParkingStatusData[] GetLiveParkingStatus()
@@ -81,8 +121,11 @@ namespace BusinessLogic
 
                 double duration = CalculateDuration(entry, exit);
                 double amount = CalculateAmountPayable(duration, parkingDetails[Utils.VehichleType]);
-                _crudOperator.UpdateAndGetData(duration, amount, exit, parkingId);
+                string releasedParking = parkingDetails[Utils.ParkingLotId];
                 
+                _crudOperator.UpdateAndGetData(duration, amount, exit, parkingId);
+                UpdateAvailableParking(releasedParking);
+
                 exitParkingData.Amount = amount.ToString();
                 exitParkingData.Duration = duration.ToString();
                 exitParkingData.EntryDateTime = entry.ToString();
@@ -95,6 +138,12 @@ namespace BusinessLogic
             }
 
             return exitParkingData;
+        }
+
+        private void UpdateAvailableParking(string parking)
+        {
+            string[] releasedParking = parking.Split('-');
+            AvailableParkingSpacesFloorWise[releasedParking[0]].Enqueue(Int32.Parse(releasedParking[1]));
         }
 
         private double CalculateDuration(DateTime entry, DateTime exit)

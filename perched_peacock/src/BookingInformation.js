@@ -101,7 +101,7 @@ class BookingInformation extends Component {
         collection.entryDateTime = form.entryDateTime.value;
         let result = await PostData(collection, this.callback);
 
-        //alert(result.)
+        console.warn('form submission data', result);
         console.warn('form submission data', collection);
     }
 

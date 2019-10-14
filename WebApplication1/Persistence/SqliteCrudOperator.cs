@@ -29,17 +29,20 @@ namespace Persistence
         private const string GET_PARKING_DETAILS_BY_VEHICHLE_NUMBER_AND_DATE =
             "select parkingId, parkingLotId, entryDateTime, customerName, VehichleNumber from T_PARKING_DATA where VehichleNumber = '{0}' and exitDateTime IS NULL";
 
-        private const string GET_PARKING_ENTRY_DATE_TIME =
-            "select entryDateTime, VehichleType from T_PARKING_DATA where parkingId = {0}";
+        private const string GET_PARKING_ENTRY_DETAILS =
+            "select entryDateTime, VehichleType, parkingLotId from T_PARKING_DATA where parkingId = {0}";
 
         private const string UPDATE_TABLE = 
             "Update T_PARKING_DATA SET amount = {0}, duration = '{1}', exitDateTime = '{2}' where parkingId = {3}";
 
+       
+      
         public SqliteCrudOperator(ILogger logger)
         {
             _connectionString = ConfigurationManager.AppSettings[Utils.SqliteConnectionString];
             _logPath = ConfigurationManager.AppSettings[Utils.LogPath];
             _logger = logger;
+
         }
 
         #region Interface Implementation
@@ -48,7 +51,7 @@ namespace Persistence
             DateTime dateTime = System.DateTime.Now;
 
             string query = String.Format(INSERT_FULL_FORM_DATA,
-                data.VehichleNumber, data.VehichleWeight, data.VehichleType, GetParkingLotId(), data.CustomerFullName,
+                data.VehichleNumber, data.VehichleWeight, data.VehichleType, data.ParkingLotId, data.CustomerFullName,
                 data.ContactNumber, dateTime.ToString("yyyy-MM-dd HH:MM"));
 
             BookingSavedStatus bookingSavedStatus = new BookingSavedStatus();
@@ -111,7 +114,7 @@ namespace Persistence
 
         public Dictionary<string, string> GetParkingEntryDateTime(int parkingId)
         {
-            string query = string.Format(GET_PARKING_ENTRY_DATE_TIME, parkingId);
+            string query = string.Format(GET_PARKING_ENTRY_DETAILS, parkingId);
             Dictionary<string, string> parkingData = new Dictionary<string, string>();
             try
             {
@@ -124,8 +127,9 @@ namespace Persistence
                         SQLiteDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            parkingData.Add("entryDateTime", reader["entryDateTime"].ToString());
-                            parkingData.Add("VehichleType", reader["VehichleType"].ToString());
+                            parkingData.Add(Utils.EntryDateTime, reader[Utils.EntryDateTime].ToString());
+                            parkingData.Add(Utils.VehichleType, reader[Utils.VehichleType].ToString());
+                            parkingData.Add(Utils.ParkingLotId, reader[Utils.ParkingLotId].ToString());
                         }
                         connection.Close();
                     }
@@ -187,11 +191,7 @@ namespace Persistence
             }
             return parkingReceipt;
         }
-
-        private string GetParkingLotId()
-        {
-            return "2F-100";
-        }
+        private Dictionary<string, int> OccupiedParkingSpaces = new Dictionary<string, int>();       
 
         #endregion private methods
 
