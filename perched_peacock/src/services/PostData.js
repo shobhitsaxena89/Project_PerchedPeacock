@@ -3,7 +3,7 @@ import axios from 'axios';
 import qs from 'querystring';
 // * snip *
 
-export async function PostData(data) {
+export async function PostData(data, callback) {
       
     const config = {
         headers: {
@@ -12,10 +12,10 @@ export async function PostData(data) {
       }
       let res =  {};
       await axios.post("http://localhost:5074/api/ParkingSystem", qs.stringify(data), config)             
-        .then(function (response) {
-            res=response;            
-            console.warn(response);
-        })
+        .then(response =>{
+            callback(response.data.message);
+            console.log(response.data.message);
+          })
         .catch(function (response) {
             
             console.warn(response);

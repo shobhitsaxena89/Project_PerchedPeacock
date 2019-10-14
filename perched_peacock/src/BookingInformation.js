@@ -19,7 +19,7 @@ class BookingInformation extends Component {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     getDateTime() {
 
         let separator = '/';
@@ -99,12 +99,16 @@ class BookingInformation extends Component {
         collection.customerFullName = form.customerFullName.value;
         collection.contactNumber = form.contactNumber.value;
         collection.entryDateTime = form.entryDateTime.value;
-        let result = await PostData(collection);
+        let result = await PostData(collection, this.callback);
 
-       //alert(result.)
+        //alert(result.)
         console.warn('form submission data', collection);
     }
 
+    callback(data) {
+        console.warn(data);
+    }
+    
     setDateTime() {
         this.setState(
             {
