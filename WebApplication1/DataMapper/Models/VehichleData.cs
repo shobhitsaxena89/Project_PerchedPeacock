@@ -5,6 +5,7 @@ using System.Web;
 
 namespace DataMapper.Models
 {
+    [Serializable]
     public class VehichleData
     {   
         public string VehichleNumber { get; set; }

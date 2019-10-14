@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataMapper.Models
-{
+{   
     public class LiveParkingStatusData
     {
         public string ParkingType { get; set; }

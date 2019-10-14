@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataMapper.Models
 {
+    [Serializable]
     public class ExitParkingData
     {
         public string EntryDateTime { get; set; }

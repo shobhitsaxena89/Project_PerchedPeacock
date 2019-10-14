@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataMapper.Models
 {
+    [Serializable]
     public class BookingSavedStatus
     {
         public bool IsSaved { get; set; }

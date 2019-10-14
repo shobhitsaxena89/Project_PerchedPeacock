@@ -1,3 +1,5 @@
+D:\Projects\WebApplication1\TestBusinessLogic\bin\Debug\x64\SQLite.Interop.dll
+D:\Projects\WebApplication1\TestBusinessLogic\bin\Debug\x86\SQLite.Interop.dll
 D:\Projects\WebApplication1\TestBusinessLogic\bin\Debug\TestBusinessLogic.dll
 D:\Projects\WebApplication1\TestBusinessLogic\bin\Debug\TestBusinessLogic.pdb
 D:\Projects\WebApplication1\TestBusinessLogic\bin\Debug\BusinessLogic.dll
