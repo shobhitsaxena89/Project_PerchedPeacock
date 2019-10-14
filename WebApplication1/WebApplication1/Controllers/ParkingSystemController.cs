@@ -20,7 +20,6 @@ namespace WebApplication1.Controllers
             return _parkingSystem != null ? _parkingSystem.GetLiveParkingStatus():
                 ParkingSystem.ParkingSystemInstance.GetLiveParkingStatus();            
         }
-
        
         public ExitParkingData Get(int id)
         {
@@ -35,16 +34,6 @@ namespace WebApplication1.Controllers
             BookingSavedStatus Status = _parkingSystem != null ? _parkingSystem.SaveNewParkingData(data) :
                     ParkingSystem.ParkingSystemInstance.SaveNewParkingData(data);
             return Status;
-        }
-       
-        public void Put(int id, [FromUri]string value)
-        {
-
-        }
-
-        
-        public void Delete(int id)
-        {
-        }
+        }     
     }
 }

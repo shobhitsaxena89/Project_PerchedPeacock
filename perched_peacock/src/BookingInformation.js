@@ -99,7 +99,7 @@ class BookingInformation extends Component {
         collection.customerFullName = form.customerFullName.value;
         collection.contactNumber = form.contactNumber.value;
         collection.entryDateTime = form.entryDateTime.value;
-       // let result = await PostData(collection);
+        let result = await PostData(collection);
 
        //alert(result.)
         console.warn('form submission data', collection);
