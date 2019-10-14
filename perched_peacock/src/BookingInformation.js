@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button, Col, Row } from 'react-bootstrap'
-//import { PostData } from './services/PostData';
+import { PostData } from './services/PostData';
 
 class BookingInformation extends Component {
 
