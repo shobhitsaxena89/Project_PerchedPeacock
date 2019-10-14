@@ -1,0 +1,7 @@
+D:\Projects\WebApplication1\DataMapper\bin\Release\DataMapper.dll
+D:\Projects\WebApplication1\DataMapper\bin\Release\DataMapper.pdb
+D:\Projects\WebApplication1\DataMapper\bin\Release\AutoMapper.dll
+D:\Projects\WebApplication1\DataMapper\bin\Release\AutoMapper.pdb
+D:\Projects\WebApplication1\DataMapper\obj\Release\DataMapper.csprojResolveAssemblyReference.cache
+D:\Projects\WebApplication1\DataMapper\obj\Release\DataMapper.dll
+D:\Projects\WebApplication1\DataMapper\obj\Release\DataMapper.pdb

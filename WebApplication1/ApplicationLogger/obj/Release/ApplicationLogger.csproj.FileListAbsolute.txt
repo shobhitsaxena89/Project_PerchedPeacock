@@ -1,0 +1,5 @@
+D:\Projects\WebApplication1\ApplicationLogger\bin\Release\ApplicationLogger.dll
+D:\Projects\WebApplication1\ApplicationLogger\bin\Release\ApplicationLogger.pdb
+D:\Projects\WebApplication1\ApplicationLogger\obj\Release\ApplicationLogger.csprojResolveAssemblyReference.cache
+D:\Projects\WebApplication1\ApplicationLogger\obj\Release\ApplicationLogger.dll
+D:\Projects\WebApplication1\ApplicationLogger\obj\Release\ApplicationLogger.pdb

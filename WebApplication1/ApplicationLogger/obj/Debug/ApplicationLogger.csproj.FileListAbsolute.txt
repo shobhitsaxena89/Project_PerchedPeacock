@@ -1,0 +1,4 @@
+D:\Projects\WebApplication1\ApplicationLogger\bin\Debug\ApplicationLogger.dll
+D:\Projects\WebApplication1\ApplicationLogger\bin\Debug\ApplicationLogger.pdb
+D:\Projects\WebApplication1\ApplicationLogger\obj\Debug\ApplicationLogger.dll
+D:\Projects\WebApplication1\ApplicationLogger\obj\Debug\ApplicationLogger.pdb

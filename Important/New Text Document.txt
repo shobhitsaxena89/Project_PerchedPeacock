@@ -1,0 +1,45 @@
+SAXENA Shobhit <shobhit.saxena@socgen.com>
+To:
+shobhitsaxena_89@yahoo.co.in
+
+9 Oct at 6:07 pm
+
+Important links
+https://malcoded.com/posts/react-http-requests-axios/
+https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2
+https://www.tutlane.com/tutorial/sqlite/sqlite-datetime-function
+https://support.microsoft.com/en-in/help/815786/how-to-store-and-retrieve-custom-information-from-an-application-confi
+https://www.c-sharpcorner.com/article/web-api-crud-operations-and-consume-service-in-asp-net-mvc-application/
+
+https://www.technical-recipes.com/2018/creating-a-user-settings-class-library-for-your-c-project/
+https://support.microsoft.com/en-in/help/815786/how-to-store-and-retrieve-custom-information-from-an-application-confi
+https://stackoverflow.com/questions/4817051/can-a-class-library-have-an-app-config-file
+https://reactstrap.github.io/components/form/?email=&password=&select=1&text=&file=
+
+
+https://blogs.msdn.microsoft.com/mvpawardprogram/2017/05/02/adding-webapi-oauth-auth/
+
+ 
+
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/external-authentication-services
+
+******************
+Deployment
+
+https://www.freecodecamp.org/news/i-built-this-now-what-how-to-deploy-a-react-app-on-a-digitalocean-droplet-662de0fe3f48/
+
+ 
+
+SQLITE:
+
+*************
+
+sqlite-dll-win32-x86-3080702.zip
+
+sqlite-shell-win32-x86-3080702.zip
+
+https://www.tutorialspoint.com/sqlite/sqlite_create_database.htm
+
+https://www.codeproject.com/Tips/1057992/Using-SQLite-An-Example-of-CRUD-Operations-in-Csha
+
+

@@ -1,0 +1,42 @@
+npm i -g typescript
+
+
+//yarn add react-form
+npm install react-bootstrap bootstrap
+
+npm install axios
+
+npm install cors
+npm install react-router-dom --save
+
+
+#####################
+Web API installations
+
+Microsoft.AspNet.WebApi.Cors
+Install-Package Microsoft.AspNet.WebApi.Cors
+also added a configuation in webApiconfig
+
+Nuget : 
+Sqlite
+Sqlite.Core
+Update-Package -reinstall System.Data.SQLite.Core
+updated Configuration in Project file (added a propery group)
+
+installing CORS module for cross region support
+
+
+The 'Microsoft.Data.Sqlite.Core 3.0.0' package requires NuGet client version '3.6' or above, but the current NuGet version is '2.8.60610.756'.
+**************************************************************
+
+
+there are 3 types of classes that support views : component, directives, pipes
+using @component decorator we can provide additional metadata to explain how to instantiate and use component at runtime
+The components are used to provide data to view via process known as data binding. The DoM elements are bind to the component properties
+A component must belong to an NgModule in order for it to be usable by another component or application. To specify that a component is a member of an NgModule, you should list it in the declarations property of that NgModule.
+
+
+ROuter Module
+Components
+Services
+Views

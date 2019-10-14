@@ -1,0 +1,17 @@
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\x64\SQLite.Interop.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\x86\SQLite.Interop.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\BusinessLogic.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\BusinessLogic.pdb
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\ApplicationLogger.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\DataMapper.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\Persistence.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\AutoMapper.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\System.Data.SQLite.dll
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\ApplicationLogger.pdb
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\DataMapper.pdb
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\Persistence.pdb
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\AutoMapper.pdb
+D:\Projects\WebApplication1\BusinessLogic\bin\Release\System.Data.SQLite.xml
+D:\Projects\WebApplication1\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Projects\WebApplication1\BusinessLogic\obj\Release\BusinessLogic.dll
+D:\Projects\WebApplication1\BusinessLogic\obj\Release\BusinessLogic.pdb
